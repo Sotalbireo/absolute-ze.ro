@@ -1,6 +1,7 @@
 <template>
   <div :class="$style.container">
-    <h1 :class="$style.title">{{ text }}</h1>
+    <h1 v-if="type == 'title'" :class="$style.title">{{ text }}</h1>
+    <p v-if="type == 'text'" :class="$style.text" v-html="text"></p>
   </div>
 </template>
 
@@ -8,24 +9,39 @@
 import { defineComponent, onMounted, ref } from '@nuxtjs/composition-api'
 
 const absoluteZero = [
-  '−273.15 °C',
-  '559.725 °D',
-  '−459.67 °F',
-  '−90.1395 °N',
-  '0 °R',
-  '−218.52 °Ré',
-  '−135.90375 °Rø',
-  '0 K',
-][(Math.random() * 8) >> 0]
+  { type: 'title', value: '−273.15 °C' },
+  { type: 'title', value: '559.725 °D' },
+  { type: 'title', value: '−459.67 °F' },
+  { type: 'title', value: '−90.1395 °N' },
+  { type: 'title', value: '0 °R' },
+  { type: 'title', value: '−218.52 °Ré' },
+  { type: 'title', value: '−135.90375 °Rø' },
+  { type: 'title', value: '0 K' },
+  { type: 'title', value: '絶対零度' },
+  {
+    type: 'text',
+    value:
+      '速攻魔法<br />エクシーズ素材が無い状態のエクシーズモンスター１体を選択して発動できる。<br />このターンのエンドフェイズ時まで、選択したモンスターの攻撃力を０にする。',
+  },
+  {
+    type: 'text',
+    value:
+      'あいてを いちげきで ひんしに する。<br>こおりタイプ いがいの ポケモンが つかうと あたりにくい。',
+  },
+]
+const pickOne = absoluteZero[(Math.random() * absoluteZero.length) >> 0]
 
 export default defineComponent({
   setup() {
     const text = ref('')
+    const type = ref('')
     onMounted(() => {
-      text.value = absoluteZero
+      text.value = pickOne.value
+      type.value = pickOne.type
     })
     return {
       text,
+      type,
     }
   },
 })
@@ -41,4 +57,7 @@ export default defineComponent({
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
   font-size: 5rem
   letter-spacing: 1px
+
+.text
+  @apply title text-base
 </style>

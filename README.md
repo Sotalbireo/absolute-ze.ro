@@ -1,5 +1,7 @@
 # absolute-zero
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/21bf2c72-fa60-4d6b-b0cc-905ad0664180/deploy-status)](https://app.netlify.com/sites/determined-clarke-fc115c/deploys)
+
 ## Build Setup
 
 ```bash

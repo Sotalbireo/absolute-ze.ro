@@ -25,7 +25,7 @@
     "@nuxt/typescript-runtime": "latest",
     "@nuxtjs/composition-api": "^0.19.1",
     "@nuxtjs/html-minifier": "^0.1.2",
-    "core-js": "3.12.0",
+    "core-js": "3.12.1",
     "nuxt": "latest"
   },
   "devDependencies": {

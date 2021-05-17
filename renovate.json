@@ -1,9 +1,21 @@
 {
-  "extends": ["config:base"],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":automergeMinor",
+    "docker:disableMajor",
+    "group:all"
+  ],
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
+      "matchPackageNames": ["sass-loader"],
+      "allowedVersions": "<=10"
+    },
+    {
+      "matchPackageNames": ["husky"],
+      "allowedVersions": "<=4"
     }
-  ]
+  ],
+  "schedule": ["before 7am on Monday"],
+  "timezone": "Asia/Tokyo"
 }

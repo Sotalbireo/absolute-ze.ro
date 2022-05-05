@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+  "settings": {
+		"volar.takeOverMode.enabled": true,
+		"typescript.tsdk": "node_modules/typescript/lib",
+		"deno.enable": false,
+		"deno.lint": false,
+		"deno.unstable": false
+  }
+}

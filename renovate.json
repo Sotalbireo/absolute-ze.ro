@@ -7,14 +7,6 @@
     "group:all"
   ],
   "packageRules": [
-    {
-      "matchPackageNames": ["sass-loader"],
-      "allowedVersions": "<=10"
-    },
-    {
-      "matchPackageNames": ["husky"],
-      "allowedVersions": "<=4"
-    }
   ],
   "schedule": ["before 7am on Monday"],
   "timezone": "Asia/Tokyo"

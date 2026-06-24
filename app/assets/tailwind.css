@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&display=swap");
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Fallback";
+  font-display: swap;
+  src: url("/LastResort.ttf") format("truetype");
+}
+
+@theme {
+  --font-main: "Source Sans 3", "IBM Plex Sans JP", sans-serif, Fallback;
+}
+
+@layer base {
+  html,
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    color: var(--color-slate-700);
+    font-family: var(--font-family-sans);
+    height: 100vh;
+    width: 100vw;
+    font-size: 16px;
+    text-size-adjust: 100%;
+    word-spacing: 1px;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+  }
+}

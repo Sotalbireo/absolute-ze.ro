@@ -1,0 +1,7 @@
+import { mkdirSync, rmSync } from "node:fs";
+import type { FullConfig } from "@playwright/test";
+
+export default async function globalSetup(_config: FullConfig) {
+  rmSync("screenshots", { recursive: true, force: true });
+  mkdirSync("screenshots");
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainer.schema.json",
+  "name": "absolute-ze.ro",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24-trixie",
+  "mounts": [
+    {
+      "target": "${containerWorkspaceFolder}/.nuxt",
+      "type": "volume"
+    },
+    {
+      "target": "${containerWorkspaceFolder}/node_modules",
+      "type": "volume"
+    }
+  ],
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "postAttachCommand": "yarn install",
+  "remoteUser": "root",
+  "containerUser": "root",
+  "forwardPorts": [3000],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Vue.volar",
+        "oxc.oxc-vscode",
+        "bradlc.vscode-tailwindcss"
+      ]
+    },
+    "zed": {
+      "extensions": ["toml", "vue"]
+    }
+  }
+}

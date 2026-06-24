@@ -1,33 +1,44 @@
 {
   "name": "absolute-ze.ro",
   "description": "絶対零度",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "preview:static": "npx http-server ./.output/public -c-1 -p 3000",
+    "preview:static": "yarn dlx serve ./.output/public --cors -p 3000",
     "start": "node .output/server/index.mjs",
-    "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
-    "lint": "yarn lint:js"
+    "lint": "oxlint --type-aware --fix",
+    "test:visual": "playwright test"
+  },
+  "dependencies": {
+    "vue": "^3.5.38",
+    "vue-router": "^5.1.0"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config-typescript": "^8.0.0",
-    "@nuxtjs/tailwindcss": "^5.0.0-4",
-    "@typescript-eslint/eslint-plugin": "^5.12.0",
-    "@typescript-eslint/parser": "^5.12.0",
-    "autoprefixer": "^10.4.2",
-    "eslint": "^8.9.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-vue": "^8.4.1",
-    "nuxt": "3.0.0-rc.1",
-    "postcss": "^8.4.6",
-    "sass": "^1.49.7",
-    "sass-loader": "^12.6.0",
-    "tailwindcss": "^3.0.22",
-    "typescript": "^4.5.5"
+    "@playwright/test": "^1.61.0",
+    "@tailwindcss/vite": "^4.3.1",
+    "nuxt": "^4.4.8",
+    "oxlint": "^1.70.0",
+    "oxlint-tsgolint": "^0.23.0",
+    "tailwindcss": "^4.3.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16"
+  },
+  "peerDependencies": {
+    "@nuxt/kit": "*"
+  },
+  "engines": {
+    "node": "24"
+  },
+  "packageManager": "yarn@4.17.0",
+  "devEngines": {
+    "packageManager": {
+      "name": "yarn",
+      "version": ">=4.17.0",
+      "onFail": "download"
+    }
   }
 }

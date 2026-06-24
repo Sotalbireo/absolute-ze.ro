@@ -5,3 +5,14 @@ node_modules
 .cache
 .output
 .env
+
+screenshots/
+test-results/
+
+# Yarn Berry
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
+
+dist/

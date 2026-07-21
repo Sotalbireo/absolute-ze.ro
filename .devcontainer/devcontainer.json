@@ -19,14 +19,10 @@
   "forwardPorts": [3000],
   "customizations": {
     "vscode": {
-      "extensions": [
-        "Vue.volar",
-        "oxc.oxc-vscode",
-        "bradlc.vscode-tailwindcss"
-      ]
+      "extensions": ["Vue.volar", "oxc.oxc-vscode", "bradlc.vscode-tailwindcss"]
     },
     "zed": {
-      "extensions": ["toml", "vue"]
+      "extensions": ["oxc", "toml", "vue"]
     }
   }
 }
